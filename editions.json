@@ -1,7 +1,94 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T00:10:41.856Z",
+  "updated_at": "2026-11-19T00:36:27.376Z",
   "editions": [
+    {
+      "date": "2026-11-19",
+      "kind": "brief",
+      "title": "封装成为产品路线的一部分：Azure、桌面AI与3D存储｜检索截止 08:36（北京时间）",
+      "read_minutes": 6,
+      "public_reviewed": true,
+      "highlights": [
+        "微软宣布 Azure 自研芯片采用 Intel EMIB，合作延伸至 Xeon 与 CXL；封装采用不等于晶圆代工订单。",
+        "RTX Spark 大内存AI台式机开始供货；模型能装下，不等于运行得快。",
+        "近72小时补充：PFN、SEMIFIVE 开发3D堆叠推理芯片，计划2027年一季度流片。"
+      ],
+      "items": [
+        {
+          "category": "先进封装与云计算",
+          "title": "微软与 Intel：把封装、CPU和内存纳入同一合作",
+          "evidence": "双方公告一致；非独立效果评测",
+          "event_date": "2026-11-18发布；微软稿件为美国东部时间11:47",
+          "stage": "合作采用宣布＋多年供货安排",
+          "what": "双方宣布扩大 Azure 合作：微软将为自研芯片采用 EMIB 先进封装，并确认包含下一代 Diamond Rapids 的多年 Xeon 供货能力，继续推进 CXL 内存等优化。",
+          "why": "封装与内存组织正在进入云厂商的采购和设计决策。工程判断：代工厂可以从封装环节参与客户产品，不能把封装订单直接等同于逻辑芯片的晶圆制造订单。",
+          "connection": "规划系统时，要同时问芯片如何组合、数据如何跨芯片流动，以及软件如何使用内存资源。",
+          "caveat": "公告未披露自研芯片型号、采用数量和量产时间。CXL性能宣传的对照虚拟机在CPU数量、内存容量上有差异，不能归因成CXL本身的固定加速倍数。",
+          "sources": [
+            {
+              "label": "Intel：Azure合作公告",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/microsoft-azure-infrastructure-collaboration.html"
+            },
+            {
+              "label": "微软发布稿及测试条件",
+              "url": "https://www.prnewswire.com/news-releases/microsoft-and-intel-deepen-collaboration-to-deliver-differentiated-azure-infrastructure-302944146.html"
+            },
+            {
+              "label": "技术背景：Intel EMIB说明（2026-07-29）",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/intel-foundry/intels-us-advanced-packaging-enables-next-generation-ai-semiconductors.html"
+            }
+          ]
+        },
+        {
+          "category": "本地AI与内存",
+          "title": "RTX Spark 台式机开始供货，大内存路线向桌面扩展",
+          "evidence": "NVIDIA原始产品博客；单源",
+          "event_date": "事件与发布：2026-11-18；未注明具体时刻",
+          "stage": "部分品牌已可购买，其他品牌待推出",
+          "what": "NVIDIA 宣布 ASUS、Dell、MSI 的 RTX Spark 紧凑台式机开始销售，最高128GB统一内存，定位本地模型、开发与创作；其他品牌仍为后续计划。",
+          "why": "内存容量影响模型能否容纳，带宽与计算能力影响执行速度。大内存本地AI由此进一步进入独立桌面产品，但这不是购买推荐。",
+          "connection": "评估时应一起计算权重、运行缓存、上下文长度和并发占用，并核对操作系统与推理软件兼容性。",
+          "caveat": "统一内存容量不能直接当独立显卡显存指标比较；可运行模型规模和峰值算力也不等于每秒输出速度。本轮未取得独立实测、完整价格与地区供货数据。",
+          "sources": [
+            {
+              "label": "NVIDIA：RTX Spark台式机供货说明",
+              "url": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/"
+            }
+          ]
+        },
+        {
+          "category": "3D芯片与亚洲产业",
+          "title": "近72小时补充：PFN 与 SEMIFIVE 选择逻辑芯片叠DRAM",
+          "evidence": "项目双方原始公告；共同声明",
+          "event_date": "正文日期2026-11-16；PFN页面标2026-11-17，近72小时补充",
+          "stage": "开发中；目标2027年第一季度流片",
+          "what": "双方开发 MN-Core L2000 推理芯片，将逻辑芯片与DRAM垂直堆叠，目标带宽超过L1000两倍。PFN负责架构及逻辑设计，SEMIFIVE负责实现与供应链执行，公告列出三星代工平台支持。",
+          "why": "这条路线优先缩短计算与存储间的数据路径，也展示了架构公司、设计服务商、代工与封装团队的分工。",
+          "connection": "工程推断：接口功能以外，需要联合考虑温度、电源、测试可达性和故障定位。",
+          "caveat": "倍数是相对自家前代的目标，尚非量产实测，更不是比所有GPU快两倍。流片只是交付制造数据，之后仍需制造、封装、测试与验证。",
+          "sources": [
+            {
+              "label": "PFN：L2000合作原文",
+              "url": "https://www.preferred.jp/en/news/pr20261116"
+            },
+            {
+              "label": "SEMIFIVE发布稿：项目分工与时间",
+              "url": "https://www.prnewswire.com/news-releases/pfn-and-semifive-collaborate-to-develop-the-mn-core-l2000-series-of-next-generation-ai-inference-chips-302940559.html"
+            }
+          ]
+        }
+      ],
+      "lesson": {
+        "title": "拆懂一项技术：封装为什么会改变架构？",
+        "paragraphs": [
+          "先想一个熟悉的现象：计算模块有空闲，却要等存储返回。除了提高计算速度，也可以调整物理连接，让计算与存储之间布置更多合适的数据通路。",
+          "die是切割后的裸芯片；chiplet（小芯片）是将系统拆成多个可组合芯片的设计思路。它们需要封装内互联，才能共同完成系统任务。",
+          "EMIB可理解为在封装基板内嵌入局部硅桥，连接并排放置的芯片。它不是把DRAM压在逻辑芯片上；PFN的垂直堆叠是另一种空间组织方式。这是入门简化，EMIB解释依据Intel公开资料。",
+          "收益是更灵活地组织计算、存储与连接；代价可能转移到散热、供电、制造良率和测试。验证视角的工程推断：跨裸片接口必须明确复位顺序、通信错误、背压和恢复责任，模块分别通过不等于系统通过。"
+        ]
+      },
+      "takeaway": "今天能确认的是封装与内存已进入具体产品和采购路线；哪种方案更划算，仍需相同负载、功耗、软件与供货条件下的证据。Intel七月的封装说明只作技术背景。本期未用国内公司传闻或旧闻补足数量。"
+    },
     {
       "date": "2026-11-18",
       "kind": "brief",
