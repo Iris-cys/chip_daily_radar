@@ -1,7 +1,87 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T00:57:00.176Z",
+  "updated_at": "2026-11-24T00:13:39.156Z",
   "editions": [
+    {
+      "date": "2026-11-24",
+      "kind": "brief",
+      "title": "安全MCU的硬件冗余，与CPU上的生产AI｜检索截止 08:13（北京时间）",
+      "read_minutes": 5,
+      "public_reviewed": true,
+      "highlights": [
+        "Microchip宣布AVR SD获得面向特定安全控制用途的UL组件认可；双核锁步等机制进入可供系统集成的安全基础。",
+        "Intel披露Viettel采用Xeon 6的AI案例；覆盖用户数与每天查询量不能换算为峰值并发或芯片性能。",
+        "NVIDIA宣布黄仁勋恢复CEO、总裁和董事职务，同时继续调查并增设合规职位。"
+      ],
+      "items": [
+        {
+          "category": "MCU与功能安全",
+          "title": "AVR SD获得组件级认可，安全价值来自故障检测与处置",
+          "evidence": "Microchip公告与产品技术页；UL评价信息由公告披露",
+          "event_date": "公告：2026-11-23；未另列认可授予日",
+          "stage": "现有MCU家族取得组件认可；非整机认证",
+          "what": "Microchip宣布AVR SD MCU家族获得UL/CSA/IEC 60730-2-5 Class C相关组件认可，面向燃气设备等自动电气控制用途。其硬件包含双核锁步、带纠错的存储器、故障监测和错误控制器。",
+          "why": "相比更多依赖软件诊断的方案，把安全机制放进硬件可减少部分软件与存储开销，并提供更确定的故障响应基础。此次增量是相关架构获得组件级评价，而非首次提出双核冗余。",
+          "caveat": "本轮未独立查阅UL证书全文与全部适用条件。组件认可只覆盖评价范围，最终设备仍需结合应用、软件和外部电路完成安全论证；不能由此宣称任意整机已通过认证。",
+          "sources": [
+            {
+              "label": "Microchip：11月23日组件认可公告",
+              "url": "https://ir.microchip.com/news-events/press-releases/detail/1430/microchip-avr-sd-mcus-enable-simplified-development-of-iec-60730-class-c-compliant-systems"
+            },
+            {
+              "label": "Microchip：AVR SD硬件机制与安全软件",
+              "url": "https://www.microchip.com/en-us/products/microcontrollers/8-bit-mcus/avr-mcus/avr-sd"
+            }
+          ]
+        },
+        {
+          "category": "CPU与企业AI采用",
+          "title": "Viettel案例：Xeon 6承载电信运营数据检索与多代理服务",
+          "evidence": "Intel发布的客户案例；厂商与客户陈述，非独立基准",
+          "event_date": "案例发布：2026-11-23；实际部署起始日未披露",
+          "stage": "已运行平台的案例披露；非新CPU发布",
+          "what": "Intel介绍Viettel的netMind平台采用Xeon 6，把多个运营系统的数据通过自然语言检索和代理编排提供给工程团队。案例称服务超过1.2万用户、每天处理约3000次运营查询，汇集30个运营系统。",
+          "why": "与只讨论模型计算相比，真实服务还涉及检索、数据访问和任务编排。这个采用案例展示CPU在整条AI服务链中的角色，但并未给出足够信息判断CPU与GPU的替代关系。",
+          "caveat": "注册或覆盖用户数不等于同时在线负载，日查询数也不等于峰值吞吐。网页未完整披露模型、服务器配置、并发与端到端延迟分布，故不据此作性能排名或成本比较。",
+          "sources": [
+            {
+              "label": "Intel：Viettel netMind部署案例",
+              "url": "https://www.intel.com/content/www/us/en/newsroom/news/artificial-intelligence/viettel-real-time-operational-insights.html"
+            }
+          ]
+        },
+        {
+          "category": "全球公司与治理",
+          "title": "NVIDIA恢复黄仁勋职务，合规监督仍在推进",
+          "evidence": "NVIDIA官方公告；CityNews报道核对，核心信息仍来自公司",
+          "event_date": "2026-11-23宣布并立即生效；发布稿时间为美国东部08:55",
+          "stage": "董事会决议已生效",
+          "what": "NVIDIA宣布黄仁勋恢复总裁、CEO及董事职务；Colette Kress继续担任CFO，Harvey Jones继续担任董事长。公司同时表示独立董事委员会调查继续，并启动首席合规官职位招聘。",
+          "why": "这改变了核心管理岗位的安排，也是理解公司决策和合规监督框架的一项进展。工程与产业层面的实际影响，要继续观察产品、客户及供应链执行。",
+          "caveat": "管理任命不能推导出技术路线或出口许可变化；公司关于风险的表态也不等于调查已结束。当前公告没有宣布新的芯片规格、产能或交付安排。",
+          "sources": [
+            {
+              "label": "NVIDIA：恢复职务与治理安排原文",
+              "url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director"
+            },
+            {
+              "label": "CityNews：管理职务恢复报道",
+              "url": "https://toronto.citynews.ca/2026/11/23/nvidia-board-reinstates-jensen-huang-as-ceo-president/"
+            }
+          ]
+        }
+      ],
+      "lesson": {
+        "title": "拆懂一项技术：双核锁步为什么不是让程序快一倍？",
+        "paragraphs": [
+          "以下为通用原理背景。假设一段RTL控制逻辑决定何时关闭阀门。常规功能验证关心输入正常时输出是否正确；安全验证还要问，一个内部状态位翻转以后，系统能否及时发现并控制后果。",
+          "双核锁步是让两套CPU执行对应工作并比较关键结果，目的在于发现不一致。因此它增加的是检测能力，不直接等于两个独立核分担任务的吞吐收益。AVR SD产品页明确列出两颗AVR CPU采用这种配置。",
+          "检出错误之后，还需要错误控制器和软件执行规定的处置，例如进入安全状态，即让设备转到预先定义、风险受控的工作状态。具体是关断、降级还是保持某项功能，必须由应用安全要求决定。",
+          "代价是额外硬件、功耗及集成复杂度。通用工程限制是：两路因同一原因同时算错，比较结果可能仍一致，故冗余不能替代其他保护。验证应注入单路故障、比较器或报警路径故障，并检查检测时间、处置顺序及复位恢复，而非只看最后是否报错。"
+        ]
+      },
+      "takeaway": "本期采用过去24小时发布的三份材料。我的判断：评价芯片价值要看它在系统中完成了什么，以及证据覆盖到哪一层；组件认可、部署案例和管理任命分别回答不同问题，不能互相替代。"
+    },
     {
       "date": "2026-11-23",
       "kind": "brief",
